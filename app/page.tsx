@@ -1,8 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 
+interface Tweet {
+  id: number;
+  user: string;
+  content: string;
+  timestamp: string;
+}
+
 export default function Home() {
-  const [tweets, setTweets] = useState([]);
+  const [tweets, setTweets] = useState<Tweet[]>([]);
 
   useEffect(() => {
     async function fetchTweets() {
