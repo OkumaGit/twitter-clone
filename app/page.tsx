@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import TweetCard from "@/components/TweetCard";
 
 interface Tweet {
   id: number;
@@ -25,10 +27,14 @@ export default function Home() {
       <h1>Latest Tweets</h1>
       {tweets.map((tweet) => (
         <div key={tweet.id}>
-          <p>
-            <strong>{tweet.user}</strong>:{tweet.content}
-          </p>
-          <small>{tweet.timestamp}</small>
+          <Link key={tweet.id} href={`/tweet/${tweet.id}`}>
+            <p className="hover:bg-sky-700">
+              <strong>{tweet.user}</strong>:{tweet.content}import TweetCard from
+              "@/components/TweetCard";
+            </p>
+            <small>{tweet.timestamp}</small>
+            <TweetCard tweet={tweet} />
+          </Link>
         </div>
       ))}
     </div>
