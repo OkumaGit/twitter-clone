@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Readme
+# /01_milestone
+# /02_milestone
+# /03_milestone
+# /04_milestone
+# /05_milestone
+# /06_milestone

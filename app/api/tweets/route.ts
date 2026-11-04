@@ -1,4 +1,6 @@
-export async function GET() {
+import { NextRequest } from "next/server";
+
+export async function GET(_request: NextRequest) {
   const tweets = [
     {
       id: 1,
