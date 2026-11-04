@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import TweetCard from ".../components";
 
 async function TweetContent({ params }) {
   const { id } = await params;
@@ -8,6 +9,7 @@ async function TweetContent({ params }) {
 export default function TweetPage({ params }) {
   return (
     <Suspense fallback={<div>Loading tweet...</div>}>
+      <TweetCard params={params} />
       <TweetContent params={params} />
     </Suspense>
   );
