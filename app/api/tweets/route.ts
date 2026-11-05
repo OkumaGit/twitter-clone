@@ -1,7 +1,7 @@
-import { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(_request: NextRequest) {
-  const tweets = [
+export function GET() {
+  return NextResponse.json([
     {
       id: 1,
       user: "JohnDoe",
@@ -10,10 +10,9 @@ export async function GET(_request: NextRequest) {
     },
     {
       id: 2,
-      user: "JohnDoe",
-      content: "Hello Next.js!",
-      timestamp: "2m ago",
+      user: "JaneDoe",
+      content: "Another tweet",
+      timestamp: "5m ago",
     },
-  ];
-  return new Response(JSON.stringify(tweets), { status: 200 });
+  ]);
 }

@@ -1,6 +1,11 @@
 import fs from "node:fs/promises";
 
-import type { Tweet } from "@/app/server/data/data";
+interface Tweet {
+  id: number;
+  user: string;
+  content: string;
+  timestamp: string;
+}
 
 const TWEETS_FILE = "./tweets.json";
 
