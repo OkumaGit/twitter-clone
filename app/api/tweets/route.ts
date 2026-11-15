@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export function GET() {
-  return NextResponse.json([
+  const tweets = [
     {
       id: 1,
       user: "JohnDoe",
@@ -14,5 +14,12 @@ export function GET() {
       content: "Another tweet",
       timestamp: "5m ago",
     },
-  ]);
+  ];
+
+  return NextResponse.json(tweets);
+}
+
+export async function POST(request: Request) {
+  const body = await request.json();
+  return NextResponse.json({ message: "Tweet created", data: body });
 }

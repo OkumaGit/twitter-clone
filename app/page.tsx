@@ -11,8 +11,8 @@ interface Tweet {
 }
 
 export default function Home() {
+  // Fetching tweets
   const [tweets, setTweets] = useState<Tweet[]>([]);
-
   useEffect(() => {
     async function fetchTweets() {
       const res = await fetch("/api/tweets");
@@ -21,6 +21,7 @@ export default function Home() {
     }
     fetchTweets();
   }, []);
+  //
 
   return (
     <div className="flex flex-col gap-5 flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -28,7 +29,7 @@ export default function Home() {
       {tweets.map((tweet) => (
         <div key={tweet.id}>
           <Link key={tweet.id} href={`/tweet/${tweet.id}`}>
-            <p className="hover:bg-sky-700">
+            <p className="hover:bg-sky-500">
               <strong>{tweet.user}</strong>:{tweet.content}
               <li key={tweet.id}>{tweet.content}</li>
             </p>
