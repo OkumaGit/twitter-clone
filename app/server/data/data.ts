@@ -14,10 +14,10 @@ export async function getTweets(): Promise<Tweet[]> {
     const data = await fs.readFile(TWEETS_FILE, "utf-8");
     return JSON.parse(data) as Tweet[];
   } catch (error) {
-    console.error("Error rading tweets:", error);
+    console.error("Error reading tweets:", error);
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
       return [];
     }
-    throw new Error(``);
+    throw new Error(`Error reading tweets`);
   }
 }

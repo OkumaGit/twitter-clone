@@ -30,6 +30,7 @@ export default function Home() {
           <Link key={tweet.id} href={`/tweet/${tweet.id}`}>
             <p className="hover:bg-sky-700">
               <strong>{tweet.user}</strong>:{tweet.content}
+              <li key={tweet.id}>{tweet.content}</li>
             </p>
             <small>{tweet.timestamp}</small>
             <TweetCard tweet={tweet} />
