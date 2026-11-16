@@ -27,7 +27,7 @@ export default function Home() {
     <div className="flex flex-col gap-5 flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <h1>Latest Tweets</h1>
       {tweets.map((tweet) => (
-        <div key={tweet.id}>
+        <div key={tweet._id}>
           <Link key={tweet.id} href={`/tweet/${tweet.id}`}>
             <p className="hover:bg-sky-500">
               <strong>{tweet.user}</strong>:{tweet.content}
