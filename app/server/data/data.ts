@@ -5,6 +5,7 @@ interface Tweet {
   user: string;
   content: string;
   timestamp: string;
+  _id: number;
 }
 
 const TWEETS_FILE = "./tweets.json";
