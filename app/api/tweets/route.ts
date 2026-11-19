@@ -29,20 +29,20 @@ export async function GET() {
       createdAt: -1,
     });
 
-    if (tweets.length === 0) {
-      await Tweet.create([
-        {
-          user: "JohnDoe",
-          content: "Hi from Docker MongoDB",
-          timestamp: "1min ago",
-        },
-        {
-          user: "JohnDoe",
-          content: "Second tweet from real MongoDB",
-          timestamp: "Just now",
-        },
-      ]);
-    }
+    // if (tweets.length === 0) {
+    //   await Tweet.create([
+    //     {
+    //       user: "JohnDoe",
+    //       content: "Hi from Docker MongoDB",
+    //       timestamp: "1min ago",
+    //     },
+    //     {
+    //       user: "JohnDoe",
+    //       content: "Second tweet from real MongoDB",
+    //       timestamp: "Just now",
+    //     },
+    //   ]);
+    // }
     return NextResponse.json(tweets);
   } catch (error) {
     console.error("Error with getting Tweets", error);
@@ -63,6 +63,9 @@ export async function POST(request: Request) {
     return NextResponse.json(newTweet, { status: 201 });
   } catch (error) {
     console.error("Error while creating tweet");
-    return NextResponse.json({ error: "Tweet wasnt created" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Tweet wasn't created" },
+      { status: 500 },
+    );
   }
 }
