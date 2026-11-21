@@ -1,5 +1,5 @@
 type Tweet = {
-  id: number;
+  _id: string;
   user: string;
   content: string;
   timestamp: string;
@@ -9,7 +9,7 @@ export default function TweetCard({ tweet }: { tweet: Tweet }) {
   return (
     <article className="w-full max-w-xl rounded border border-zinc-200 bg-white p-3 shadow-sm hover:bg-sky-300">
       <p className="font-semibold">{tweet.user}</p>
-      <p className="font-semibold">{tweet.id}</p>
+      <p className="font-semibold">{tweet._id}</p>
       <p className="mt-1 text-sm">{tweet.content}</p>
       <small className="mt-2 block text-zinc-500">{tweet.timestamp}</small>
     </article>
