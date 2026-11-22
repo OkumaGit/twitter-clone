@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import TweetCard from "../components/TweetCard";
+import TweetForm from "../components/TweetForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import TweetForm from "../components/TweetForm";
 import SideBar from "../components/Sidebar";
 
 interface Tweet {
@@ -29,8 +29,7 @@ export default function Profile() {
   return (
     <div>
       <div className="flex">
-        <div className="flex-1"></div>
-        <div className="flex flex-2">
+        <div>
           <main className="mx-auto w-full max-w-2xl">
             <section className="mb-6 rounded-lg bg-white p-4 shadow-sm">
               <h2 className="mb-4 text-lg font-semibold">What's new?</h2>

@@ -30,8 +30,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex">
-        <div className="flex-1"></div>
-        <div className="flex flex-2">
+        <div className="flex ">
           <main className="mx-auto w-full max-w-2xl">
             <section className="mb-6 rounded-lg bg-white p-4 shadow-sm">
               <h2 className="mb-4 text-lg font-semibold">What's new?</h2>
