@@ -35,7 +35,7 @@ export default function Home() {
           <TweetForm />
         </section>
         <section aria-labelledby="latest-tweets">
-          <div className="flex w-full max-w-xl justify-between">
+          <div className="flex w-full max-w-2xl justify-between">
             <h2 id="latest-tweets" className="mb-4 text-xl font-bold">
               Latest Tweets
             </h2>
