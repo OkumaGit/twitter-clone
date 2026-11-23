@@ -6,7 +6,7 @@ export default function SideBar() {
     { label: "Profile", href: "/profile" },
   ];
   return (
-    <aside className="w-56 shrink-0 p-4">
+    <aside className="w-56 shrink-0">
       <nav className="space-y-2" aria-label="Main nav">
         {links.map((link) => {
           const active = link.href;

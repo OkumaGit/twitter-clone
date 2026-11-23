@@ -26,13 +26,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <div className="min-h-screen">
+      <body className="min-h-full bg-zinc-50 dark:bg-black">
+        <div className="flex min-h-screen flex-col">
           <Header />
-          <div className="flex">
+          <div className="mx-auto flex w-full max-w-6xl flex-1 gap-6 px-4 py-6">
             <SideBar />
             <main className="flex-1">{children}</main>
+            <div className="hidden w-56 shrink-0 lg:block"></div>
           </div>
+
           <Footer />
         </div>
       </body>
