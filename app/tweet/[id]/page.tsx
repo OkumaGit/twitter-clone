@@ -6,7 +6,7 @@ type TweetPageProps = {
 export default async function TweetPage({ params }: TweetPageProps) {
   const { id } = await params;
   return (
-    <main className="container mx-auto p-6 min-h-screen">
+    <main className="mx-auto w-full max-w-2xl">
       <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Tweet Page {id}

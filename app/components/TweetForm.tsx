@@ -39,24 +39,46 @@ export default function TweetForm() {
     }
   }
 
-  return (
-    <form onSubmit={submitTweet} className="space-y-3">
-      <textarea
-        value={content}
-        onChange={(event) => setContent(event.target.value)}
-        placeholder="What's happening?"
-        disabled={isSending}
-        required
-        className="w-full rounded-lg border p-3"
-      />
+  function getInitials(name: string) {
+    return name
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0].toUpperCase())
+      .join("");
+  }
 
-      <button
-        type="submit"
-        disabled={isSending}
-        className="rounded-lg bg-sky-500 px-4 py-2 text-white disabled:opacity-50"
-      >
-        {isSending ? "Publishing..." : "Publish"}
-      </button>
-    </form>
+  const userName = "John Doe";
+
+  return (
+    <>
+      <div className="mb-4 flex items-center gap-3">
+        <div
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky-500 font-semibold text-white"
+          aria-label={`${userName} avatar`}
+        >
+          {getInitials(userName)}
+        </div>
+        <h2 className="text-lg font-semibold">What's new?</h2>
+      </div>
+      <form onSubmit={submitTweet} className="space-y-3">
+        <textarea
+          value={content}
+          onChange={(event) => setContent(event.target.value)}
+          placeholder="What's happening?"
+          disabled={isSending}
+          required
+          className="w-full rounded-lg border p-3"
+        />
+        <button
+          type="submit"
+          disabled={isSending}
+          className="rounded-lg bg-sky-500 px-4 py-2 text-white disabled:opacity-50"
+        >
+          {isSending ? "Publishing..." : "Publish"}
+        </button>
+      </form>
+    </>
   );
 }

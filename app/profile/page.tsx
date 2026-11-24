@@ -39,7 +39,6 @@ export default function Profile() {
       <div className="mx-auto w-full max-w-2xl space-y-6">
         <main className="mx-auto w-full max-w-2xl">
           <section className="mb-6 rounded-lg bg-white p-4 shadow-sm">
-            <h2 className="mb-4 text-lg font-semibold">What's new?</h2>
             <TweetForm />
           </section>
           <section aria-labelledby="latest-tweets">
